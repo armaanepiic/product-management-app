@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { mockProducts } from './mockdata.js';
 import envConfig from "./config/envConfig.js";
+import productRouter from './routers/product.js';
 
 const app = express();
 
@@ -22,10 +23,7 @@ app.get("/status", (req, res) => {
   );
 });
 
-app.get("/api/products" , (req, res) => {
-  res.status(200).json(mockProducts);
-})
-
+app.use('/api/products' , productRouter);
 
 app.listen(envConfig.PORT, () => {
   console.log(`Example app listening on port ${envConfig.PORT}`);
