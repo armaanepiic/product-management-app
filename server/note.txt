@@ -23,3 +23,17 @@ DELETE => DELETE
 # can not find anything : 404
 # user sends corrupted data: 400
 # internal error : 500
+
+
+# for modularize in nodeJs there are 2 way - 1. commonJs (require) 2. es6 (import/export)
+# for es6 we add "type": "module" in package.json 
+# for es6 when we import then use this way => import envConfig from "./config/envConfig.js"; // need to append the .js extension
+
+# we dont share the .env file, add it into .gitignore file
+# why .env?
+    if we want to run the project somewhere else then the ALLOWED_ORIGIN/Database url will be different
+    so we create .env file where we store secret info. 
+
+# we will create .env.example for understanding the environment variable
+# how we use the environment variable in out application?
+    we should install a library named: .env (npm i dotenv)
