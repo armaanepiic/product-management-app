@@ -1,10 +1,11 @@
 import {Router} from 'express'
 import { mockProducts } from '../mockdata.js';
+import { RouteNotImplementedError } from '../errors/index.js';
 
 const productRouter = Router();
 
 productRouter.post("/", (req, res) => {
-  throw new Error("Not implemented yet!!");
+  throw new RouteNotImplementedError();
 })
 
 productRouter.get('/', (req, res) => {
