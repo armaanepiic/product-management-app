@@ -1,0 +1,22 @@
+import { mockProducts } from "../mockdata.js";
+
+export const getAllProducts = (req, res) => {
+  res.status(200).json(mockProducts);
+};
+
+export const getProductById = (req, res) => {
+  const { productId } = req.params;
+  res.json({ message: `Product ID: ${productId}` });
+};
+
+export const createProduct = (req, res) => {
+  throw new RouteNotImplementedError();
+};
+
+export const updateProduct = (req, res) => {
+  throw new RouteNotImplementedError();
+};
+
+export const deleteProduct = (req, res) => {
+  throw new RouteNotImplementedError();
+};
