@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { productServices } from "../api/services";
 
-export default function useProducs() {
+export default function useProducts() {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +12,7 @@ export default function useProducs() {
       const products = await productServices.getProduct();
       setProducts(products);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setError("Failed to fetch products");
     } finally {
       setIsLoading(false);
@@ -54,8 +54,9 @@ export default function useProducs() {
 
   // total price calculation
   const totalPrice = useMemo(() => {
-    return products.reduce((total, product) => total + product.price, 0);
+    return products.reduce((acc, product) => acc + product.price, 0);
   }, [products]);
+
   return {
     products,
     search,
