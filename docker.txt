@@ -1,0 +1,9 @@
+to start docker: $ docker compose up -docker
+to stop docker: $ docker compose down
+to see the machines running: $ docker compose ps
+
+docker compose exec -it pma-mongo sh
+
+use product-management
+
+to create a collection named students : db.students.insertOne({name : "Arman"})
