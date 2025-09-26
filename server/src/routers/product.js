@@ -1,19 +1,13 @@
-import { Router } from 'express';
-import { mockProducts } from '../mockdata.js';
+import { Router } from "express";
+
+import { productController } from "../controllers/index.js";
+
 const productRouter = Router();
 
-productRouter.post("/", (req, res) => {
-  throw new Error("Not implemented yet!!");
-})
-
-productRouter.get("/" , (req, res) => {
-  res.status(200).json(mockProducts);
-});
-
-productRouter.get("/:productId", (req, res) => {
-  console.log(req.params);
-  const { productId } = req.params;
-  res.json({ message: `Product ID : ${productId}` });
-})
+productRouter.post("/", productController.createProduct);
+productRouter.get("/", productController.getAllProducts);
+productRouter.get("/:productId", productController.getProductById);
+productRouter.put("/:productId", productController.updateProduct);
+productRouter.delete("/:productId", productController.deleteProduct);
 
 export default productRouter;

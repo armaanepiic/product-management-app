@@ -2,18 +2,18 @@
   "name": "server",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
   "main": "src/app.js",
   "scripts": {
-    "start": "node .",
     "dev": "nodemon .",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.2.1",
     "express": "^5.1.0"
   },
   "devDependencies": {

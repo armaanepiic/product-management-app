@@ -1,23 +1,31 @@
 import { useEffect, useState } from "react";
-import ThemeContext from "../contexts/ThemeContext";
 import { useSearchParams } from "react-router";
 
+import ThemeContext from "../contexts/ThemeContext";
+
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("dark");
-  const [searchParamas, setSearchParams] = useSearchParams();
+  const [theme, setTheme] = useState("light");
+  const [_, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    setSearchParams({ ...searchParamas, mode: theme });
+    setSearchParams({ mode: theme });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme]);
 
-  const toggletheme = () => {
+  const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
+
   return (
-    <ThemeContext.Provider value={{ theme, toggletheme }}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        toggleTheme,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );
 };
+
 export default ThemeProvider;
