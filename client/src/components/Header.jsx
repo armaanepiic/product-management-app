@@ -13,8 +13,8 @@ export default function Header() {
       )}
     >
       <div className="flex justify-between items-center max-w-4xl mx-auto">
-        <Link to='/'>
-          <h1  className="text-2xl font-bold">My App</h1>
+        <Link to="/">
+          <h1 className="text-2xl font-bold">My App</h1>
         </Link>
         <div className="flex items-center space-x-4">
           <span>Welcome Guest</span>
@@ -31,8 +31,7 @@ export default function Header() {
           </button>
         </div>
       </div>
-      <div>
-    </div>
+      <div></div>
     </header>
   );
 }

@@ -10,8 +10,6 @@ app.use(cors({
   origin: envConfig.ALLOWED_ORIGIN,
 }));
 
-
-
 app.get("/status", (req, res) => {
   res.json(
     {
