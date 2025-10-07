@@ -1,4 +1,4 @@
-to start docker: $ docker compose up -docker
+to start docker: $ docker compose up -d
 to stop docker: $ docker compose down
 to see the machines running: $ docker compose ps
 
