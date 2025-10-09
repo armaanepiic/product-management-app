@@ -1,9 +1,7 @@
 import { mockProducts } from "../mockdata.js";
-import { CreateProductSchema } from "../schemas/product.js";
 import { productServices } from "../services/index.js";
 
 export const createProduct = async (req, res) => {
-  CreateProductSchema.parse(req.body);
   const newProduct = await productServices.createProduct(req.body);
   res.status(201).json(newProduct);
 };
