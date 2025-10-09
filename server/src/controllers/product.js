@@ -1,4 +1,3 @@
-import { mockProducts } from "../mockdata.js";
 import { productServices } from "../services/index.js";
 
 export const createProduct = async (req, res) => {
@@ -6,8 +5,8 @@ export const createProduct = async (req, res) => {
   res.status(201).json(newProduct);
 };
 
-export const getAllProducts = (req, res) => {
-  res.status(200).json(mockProducts);
+export const getAllProducts = async (req, res) => {
+  res.status(200).json(await productServices.getAllProducts());
 };
 
 export const getProductById = (req, res) => {
