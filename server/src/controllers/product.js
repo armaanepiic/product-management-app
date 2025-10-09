@@ -1,16 +1,17 @@
-import { mockProducts } from "../mockdata.js";
+import { productServices } from "../services/index.js";
 
-export const getAllProducts = (req, res) => {
-  res.status(200).json(mockProducts);
+export const createProduct = async (req, res) => {
+  const newProduct = await productServices.createProduct(req.body);
+  res.status(201).json(newProduct);
+};
+
+export const getAllProducts = async (req, res) => {
+  res.status(200).json(await productServices.getAllProducts());
 };
 
 export const getProductById = (req, res) => {
   const { productId } = req.params;
   res.json({ message: `Product ID: ${productId}` });
-};
-
-export const createProduct = (req, res) => {
-  throw new RouteNotImplementedError();
 };
 
 export const updateProduct = (req, res) => {

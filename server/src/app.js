@@ -7,8 +7,10 @@ import { logger } from "./middlewares/index.js";
 
 import configureRouters from "./routers/index.js";
 import errorHandler from "./middlewares/errorHandler.js";
+import connectDB from "./routers/db.js";
 
 const app = express();
+connectDB();
 
 app.use(express.json());
 app.use(
